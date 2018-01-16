@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
 import {FormularioComponent} from './formulario.component';
@@ -21,7 +22,8 @@ import { ResponseServerComponent } from './response-server/response-server.compo
         BrowserModule,
         FormsModule,
         AppRoutingModule,
-        HttpModule
+        HttpModule,
+        BrowserAnimationsModule
     ],
     providers: [DataService],
     bootstrap: [AppComponent]

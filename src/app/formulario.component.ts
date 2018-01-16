@@ -2,12 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {DataService} from './data.service';
 import {Router} from '@angular/router';
 import {Http} from '@angular/http';
+import {fadeInAnimation} from './animations';
 
 @Component({
     selector: 'app-formulario',
     templateUrl: './formulario.component.html',
-    styleUrls: ['./formulario.component.css']/*,
-    providers: [DataService]*/
+    styleUrls: ['./formulario.component.css'],
+    animations: [fadeInAnimation],
+    host: { '[@fadeInAnimation]': '' },
+    /*providers: [DataService]*/
 })
 export class FormularioComponent implements OnInit {
 

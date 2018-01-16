@@ -4,12 +4,15 @@ import {Location} from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 import {DataService} from './data.service';
 import {Router} from '@angular/router';
+import {fadeInAnimation} from './animations';
 
 @Component({
     selector: 'app-confirmation',
     templateUrl: './confirmation.component.html',
-    styleUrls: ['./confirmation.component.css']/*,
-    providers: [DataService]*/
+    styleUrls: ['./confirmation.component.css'],
+    animations: [fadeInAnimation],
+    host: { '[@fadeInAnimation]': '' },
+    /*providers: [DataService]*/
 })
 export class ConfirmationComponent implements OnInit {
 
