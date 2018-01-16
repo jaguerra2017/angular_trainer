@@ -1,0 +1,172 @@
+<header>
+    Formulario
+</header>
+<section>
+    <header>
+        <h1>Workshop Registration</h1>
+        <div class="dropdown">
+            <button class="mainmenubtn">More Actions <span>&#65516;</span></button>
+            <div class="dropdown-child">
+                <a>English</a>
+                <a>Español</a>
+            </div>
+        </div>
+    </header>
+    <article>
+        <u>Register now while seats are available!</u>
+        <form name="registrationForm" #registrationForm="ngForm" (ngSubmit)="registrationForm.form.valid && sendData()">
+            <div class="form-side">
+                <div class="form-item">
+                    <label>
+                        First name <span>*</span>
+                    </label>
+                    <input required type="text" title="First name" name="first_name" [(ngModel)]="model.first_name" #first_name="ngModel">
+                </div>
+                <div class="error" *ngIf="registrationForm.submitted && !first_name.valid || first_name.errors && (first_name.dirty || first_name.touched)">
+                    <div [hidden]="!first_name.errors.required">
+                        First name is required!
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>
+                        Last name <span>*</span>
+                    </label>
+                    <input required type="text" title="Last name" name="last_name" [(ngModel)]="model.last_name" #last_name="ngModel">
+                </div>
+                <div class="error" *ngIf="registrationForm.submitted && !last_name.valid || last_name.errors && (last_name.dirty || last_name.touched)">
+                    <div [hidden]="!last_name.errors.required">
+                        Last name is required!
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>
+                        Company Institution <span>*</span>
+                    </label>
+                    <input required  type="text" title="Company Institution" name="company" [(ngModel)]="model.company" #company="ngModel">
+                </div>
+                <div class="error" *ngIf="registrationForm.submitted && !company.valid || company.errors && (company.dirty || company.touched)">
+                    <div [hidden]="!company.errors.required">
+                        Company Institution is required!
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>
+                        Address <span>*</span>
+                    </label>
+                    <textarea required title="Addres" name="_address" [(ngModel)]="model._address" #_address="ngModel"></textarea>
+                </div>
+                <div class="error" *ngIf="registrationForm.submitted && !_address.valid || _address.errors && (_address.dirty || _address.touched)">
+                    <div [hidden]="!_address.errors.required">
+                        Address is required!
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>
+                        City
+                    </label>
+                    <input type="text" title="City" name="city" [(ngModel)]="model.city" #city="ngModel">
+                </div>
+                <div class="form-item">
+                    <label>
+                        State /Province /Region
+                    </label>
+                    <select name="state" [(ngModel)]="model.state" #state="ngModel">
+                        <option selected value="">-Select-</option>
+                        <option *ngFor="let state of states" [value]="state.name">{{state.name}}</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label>
+                        Country
+                    </label>
+                    <select name="country" [(ngModel)]="model.country" #country="ngModel">
+                        <option selected value="">-Select-</option>
+                        <option *ngFor="let country of countrys" [value]="country.name">{{country.name}}</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label>
+                        Email <span>*</span>
+                    </label>
+                    <input required email type="email" title="E-mail" name="email" [(ngModel)]="model.email" #email="ngModel">
+                </div>
+                <div class="error" *ngIf="registrationForm.submitted && !email.valid || email.errors && (email.dirty || email.touched)">
+                    <div [hidden]="!email.errors.required">
+                        Email is required!
+                    </div>
+                    <div [hidden]="!email.errors.email || email.errors.required">
+                        Email wrong address!
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>
+                        Phone number <span>*</span>
+                    </label>
+                    <input required type="number" title="Phone number" name="phone" [(ngModel)]="model.phone" #phone="ngModel">
+                </div>
+                <div class="error" *ngIf="registrationForm.submitted && !phone.valid || phone.errors && (phone.dirty || phone.touched)">
+                    <div [hidden]="!phone.errors.required">
+                        Phone number is required!
+                    </div>
+                </div>
+            </div>
+            <div class="form-side">
+                <u>Lunch</u>
+                <div class="form-item">
+                    <label>
+                        Meal preference
+                    </label>
+                    <select name="meal" [(ngModel)]="model.meal" #meal="ngModel">
+                        <option selected value="">-Select-</option>
+                        <option *ngFor="let meal of meals" [value]="meal.name">{{meal.name}}</option>
+                    </select>
+                </div>
+
+                <u>Payment Details</u>
+                <div class="form-item">
+                    <label>
+                        Payment mode
+                    </label>
+                    <div class="checkboxes">
+                        <div class="checkbox">
+                            <span><input type="checkbox" checklist-model="payments" checklist-value="cash" name="cash"  [(ngModel)]="model.cash" #cash="ngModel">Cash</span>
+                        </div>
+                        <div class="checkbox">
+                            <span><input type="checkbox" value="cheque" name="cheque" [(ngModel)]="model.cheque" #cheque="ngModel">Cheque</span>
+                        </div>
+                        <div class="checkbox">
+                            <span><input type="checkbox" value="demand" name="demand" [(ngModel)]="model.demand" #demand="ngModel">Demand draft</span>
+                        </div>
+                    </div>
+
+                    <!--<input type="checkbox" name="payment"><span>dsdhsdhsdh</span>-->
+                </div>
+                <div class="form-item">
+                    <label>
+                        DD/Cheque No.
+                    </label>
+                    <input type="number" title="DD/Cheque No." name="cheque_no" [(ngModel)]="model.cheque_no" #cheque_no="ngModel">
+                </div>
+                <div class="form-item">
+                    <label>
+                        Drawn On (Bank Name)
+                    </label>
+                    <input type="text" title="Drawn On (Bank Name)" name="drawn" [(ngModel)]="model.drawn" #drawn="ngModel">
+                </div>
+                <div class="form-item">
+                    <label>
+                        Payable at
+                    </label>
+                    <input type="text" title="Payable at" name="payable" [(ngModel)]="model.payable" #payable="ngModel">
+                </div>
+            </div>
+            <footer>
+                <button type="submit" value="Sumbit">Submit</button>
+                <button type="reset" value="Reset">Reset</button>
+            </footer>
+        </form>
+    </article>
+</section>
+<footer>
+
+</footer>

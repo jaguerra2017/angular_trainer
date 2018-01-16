@@ -1,0 +1,55 @@
+<section>
+    <header>
+        <h1>Confirmation</h1>
+    </header>
+    <article>
+        <div class="data-side">
+            <div class="data-item">
+                <label>First name:</label><span>{{datos.first_name}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>Last name:</label><span>{{datos.last_name}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>Company Institution:</label><span>{{datos.company}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>Address:</label><span>{{datos._address}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>City:</label><span>{{datos.state}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>Country:</label><span>{{datos.country}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>Email:</label><span>{{datos.email}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>Phone number:</label><span>{{datos.phone}}</span><br>
+            </div>
+        </div>
+        <div class="data-side">
+            <div class="data-item">
+                <label>Meal preference:</label><span>{{datos.meal}}</span><br>
+            </div>
+            <div class="data-item">
+                <label>Payment mode:</label><br>
+                <ul>
+                    <li *ngIf="datos.cheque">Cheque</li>
+                    <li *ngIf="datos.cash">Cash</li>
+                    <li *ngIf="datos.demand">Demand draft</li>
+                </ul>
+                <br>
+            </div>
+            <div class="data-item"><label>DD/Cheque No.:</label><span>{{datos.cheque_no}}</span><br></div>
+            <div class="data-item"><label>Drawn On (Bank Name):</label><span>{{datos.drawn}}</span><br></div>
+            <div class="data-item"><label>Payable at:</label><span>{{datos.payable}}</span><br></div>
+
+        </div>
+    </article>
+    <footer>
+        <button [disabled]="!datos.first_name" (click)="update()">Confirm</button>
+        <button (click)="goBack()">Back</button>
+    </footer>
+</section>

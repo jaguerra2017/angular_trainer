@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+/* Master Styles */
+body{
+  font-family: Calibri;
+}
+
+u{
+  padding-bottom: 30px;
+}
+
+header {
+  color: forestgreen;
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+section {
+  border: solid 0.5px #95c9bc;
+}
+
+.error{
+  color: red;
+}
+
+button {
+  margin: 5px;
+  background-color: #95c9bc;
+  color: #ffffff;
+  padding: 5px;
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+button:disabled{
+  cursor: no-drop;
+  background-color: #788185;
+}
+
+
+header > h1 {
+  margin: 5px;
+  color: black;
+  font-size: 24px;
+}
+
+label{
+  font-weight: bold;
+  display: inline-block;
+  width: 200px;
+  float:left;
+  position: relative;
+  align-self: center;
+}

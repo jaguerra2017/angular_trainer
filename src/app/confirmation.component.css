@@ -1,0 +1,49 @@
+
+section {
+    border: solid 0.5px #95c9bc;
+}
+
+section > header {
+    background-color: #95c9bc;
+    width: 100%;
+}
+
+
+article{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+header > h1 {
+    margin: 5px;
+    color: black;
+    font-size: 24px;
+}
+
+section > footer {
+    background-color: lightgray;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.data-side{
+    margin-top: 20px;
+}
+
+.data-item{
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    span {
+        width : 100%;
+    }
+}
