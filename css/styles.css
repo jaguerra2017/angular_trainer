@@ -138,11 +138,19 @@ textarea{
 }
 .dropdown-child a {
   color: black;
-  font-size: 10px;
-  padding: 20px;
+  font-size: 13px;
+  padding: 10px;
+  padding-top: 5px;
   text-decoration: none;
   display: block;
 }
+
+.dropdown-child a:hover {
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #95c9bc;
+}
+
 .dropdown:hover .dropdown-child {
   display: block;
   z-index: 9999;
