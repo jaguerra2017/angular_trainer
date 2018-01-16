@@ -1,0 +1,122 @@
+body{
+  font-family: Calibri;
+}
+
+u{
+  padding-bottom: 30px;
+}
+
+header {
+  color: forestgreen;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+section {
+  border: solid 0.5px #95c9bc;
+}
+
+section > header {
+  background-color: #95c9bc;
+  width: 100%;
+}
+
+section > footer {
+  background-color: lightgray;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+article{
+  padding: 8px;
+}
+
+button {
+  margin: 5px;
+  background-color: #95c9bc;
+  color: #ffffff;
+  padding: 5px;
+  display: inline-block;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+header > h1 {
+  margin: unset;
+  color: black;
+  font-size: 24px;
+}
+
+form{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.form-side{
+  margin-top: 20px;
+}
+
+.form-item{
+  vertical-align: middle;
+  width: 100%;
+  margin-bottom: 25px;
+  margin-top: 10px;
+}
+
+label{
+  font-weight: bold;
+  display: inline-block;
+  width: 200px;
+  float:left;
+  position: relative;
+}
+
+label > span{
+ color: red;
+}
+
+
+input, textarea, select {
+  width : 350px;
+  margin: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+  -moz-box-sizing: border-box; /* For legacy (Firefox <29) Gecko based browsers */
+  box-sizing: border-box;
+}
+
+input[type='checkbox']{
+  width: 30px;
+}
+
+textarea{
+  height: 90px;
+  resize: none;
+}
+
+.checkboxes{
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.checkbox {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  input, textarea, select {
+    width : 100%;
+  }
+}
