@@ -67,6 +67,7 @@ form{
 }
 
 .form-item{
+  display: flex;
   vertical-align: middle;
   width: 100%;
   margin-bottom: 25px;
@@ -79,6 +80,7 @@ label{
   width: 200px;
   float:left;
   position: relative;
+  align-self: center;
 }
 
 label > span{
